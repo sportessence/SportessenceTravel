@@ -1,0 +1,312 @@
+import { Tournament } from "@/types";
+
+export const TOURNAMENTS: Tournament[] = [
+  {
+    id: "como-lake-spring-cup",
+    slug: "como-lake-spring-cup",
+    title: "Como Lake Spring Cup 2026",
+    subtitle: "Il grande torneo di Primavera tra le sponde lariane e i migliori sintetici del comasco",
+    dates: "24 - 26 Aprile 2026",
+    month: "Aprile",
+    location: "Como & Cintura Urbana (CO)",
+    categories: [
+      "Under 17 (Allievi)",
+      "Under 15 (Giovanissimi)",
+      "Under 13 (Esordienti)",
+      "Under 11 (Pulcini)",
+    ],
+    minMatchesGuaranteed: 4,
+    pitchType: "Campi sintetici di ultima generazione omologati LND/FIGC",
+    heroImage: "/imgs/calcio.jpg",
+    isFeatured: true,
+    statusBadge: "Iscrizioni Aperte",
+    overview:
+      "La Como Lake Spring Cup inaugura la stagione dei tornei primaverili nella cornice mozzafiato del Lago di Como. Tre giorni di puro calcio giovanile, confronto sportivo ad alta intensità e un'esperienza organizzativa curata nei minimi dettagli per squadre provenienti da tutta Italia e dalla vicina Svizzera.",
+    highlights: [
+      "Cerimonia di apertura con sfilata di tutte le delegazioni venerdì sera",
+      "Minimo 4 partite garantite per ogni squadra iscritta",
+      "Arbitraggi federali ufficiali e presidio medico fisso su ogni centro sportivo",
+      "Alloggi convenzionati a meno di 15 minuti dai campi con formula pensione completa",
+      "Speciale convenzione Navigazione Lago di Como per famiglie e accompagnatori",
+    ],
+    schedule: [
+      {
+        day: "Venerdì",
+        title: "Arrivo Squadre & Cerimonia Inaugurale",
+        description: "Accoglienza, check-in hotel, accrediti tecnici e grande sfilata con inno e presentazione.",
+        timeSlots: [
+          { time: "Dalle 14:00", activity: "Arrivo delegazioni e check-in negli hotel convenzionati" },
+          { time: "17:30 - 19:00", activity: "Ritiro pass dirigenti, kit gara e briefing tecnico per i mister" },
+          { time: "20:30", activity: "Sfilata ufficiale di tutte le squadre con musica e cerimonia inaugurale" },
+        ],
+      },
+      {
+        day: "Sabato",
+        title: "Fase a Gironi & Tempo Libero Famiglie",
+        description: "Gare mattutine e pomeridiane. Pomeriggio con slot liberi per visitare Como e il lago.",
+        timeSlots: [
+          { time: "09:00 - 13:00", activity: "Prima fase a gironi di qualificazione per tutte le categorie" },
+          { time: "13:00 - 15:00", activity: "Pranzo dedicato per atleti e staff negli hotel o convenzioni campo" },
+          { time: "15:30 - 19:30", activity: "Seconda tornata gironi / Tour battello convenzionato per le famiglie" },
+        ],
+      },
+      {
+        day: "Domenica",
+        title: "Fasi Finali, Premiazioni & Rientro",
+        description: "Semifinali, finalissime per il podio e grande premiazione per tutte le squadre partecipanti.",
+        timeSlots: [
+          { time: "09:30 - 12:30", activity: "Quarti e Semifinali di categoria" },
+          { time: "14:30 - 16:30", activity: "Finalissime 1°-2° posto e finali di consolazione" },
+          { time: "17:00", activity: "Premiazione sul campo principale con coppe, medaglie e gadget ricordo per tutti" },
+        ],
+      },
+    ],
+    facilities: [
+      {
+        name: "Centro Sportivo Belvedere Lario",
+        location: "Como Nord",
+        surface: "Sintetico 11vs11 di ultima generazione + 2 campi 7vs7",
+        description: "Tribuna coperta con 600 posti, 8 spogliatoi riscaldati, bar-ristorante panoramico e ampio parcheggio pullman.",
+        features: ["Tribuna Coperta", "Parcheggio Pullman", "Punto Ristoro", "Infermeria"],
+      },
+      {
+        name: "Stadio Comunale San Siro Lariano",
+        location: "Cernobbio / Como Ovest",
+        surface: "Manto sintetico omologato LND FIFA Quality",
+        description: "Impianto immerso nel verde a 2 passi dalla riva del lago, perfetto per le categorie Under 15 e Under 17.",
+        features: ["Spogliatoi Pro", "Area Lounge", "Accesso Disabili", "Wi-Fi Gratuito"],
+      },
+    ],
+    includedServices: [
+      "Soggiorno hotel convenzionato (pensione completa dalla cena del venerdì al pranzo della domenica)",
+      "Iscrizione torneo e assicurazione RC organizzazione",
+      "Pettorina e kit identificativo ufficiale Sportessence Travel per ogni atleta",
+      "Assistenza tutor dedicato in loco 24h per ogni società sportiva",
+      "Trofeo per tutte le squadre e medaglia celebrativa a ogni partecipante",
+      "Ingresso gratuito alla cerimonia e sconti speciali battelli per genitori",
+    ],
+  },
+  {
+    id: "lario-youth-trophy",
+    slug: "lario-youth-trophy",
+    title: "Lario Youth Trophy 2026",
+    subtitle: "Il prestigioso trofeo di Maggio dedicato alle categorie agonistiche U17 e U15",
+    dates: "15 - 17 Maggio 2026",
+    month: "Maggio",
+    location: "Como, Cantù & Erba (CO)",
+    categories: [
+      "Under 17 (Allievi)",
+      "Under 15 (Giovanissimi)",
+      "Under 13 (Esordienti)",
+    ],
+    minMatchesGuaranteed: 4,
+    pitchType: "Campi a 11 in erba naturale e sintetico FIFA Quality Pro",
+    heroImage: "/imgs/fotoHeroOriz.webp",
+    isFeatured: true,
+    statusBadge: "Ultimi Posti",
+    overview:
+      "Un torneo di alto profilo agonistico pensato per le formazioni che vogliono chiudere la stagione agonistica con una trasferta memorabile in una delle mete turistiche più ambite d'Europa. Livello competitivo equilibrato con fasce Gold e Silver per garantire partite avvincenti fino all'ultimo minuto.",
+    highlights: [
+      "Formula Gold Cup & Silver Cup per far giocare tutte le squadre fino a domenica",
+      "Coinvolgimento di osservatori e tecnici professionisti",
+      "Location strategica comoda per autostrade e stazioni ferroviarie di Como",
+      "Speciali menù sportivi bilanciati per giovani atleti negli alberghi partner",
+      "Copertura fotografica e video highlights delle finali",
+    ],
+    schedule: [
+      {
+        day: "Venerdì",
+        title: "Arrivo & Meeting Tecnico",
+        description: "Check-in, sistemazione e ritrovo per tutti gli staff tecnici con presentazione calendario.",
+        timeSlots: [
+          { time: "Dalle 15:00", activity: "Arrivo comitive e sistemazione nelle strutture ricettive" },
+          { time: "18:30", activity: "Briefing tecnico con i direttori di gara e consegna cartelline gara" },
+          { time: "20:30", activity: "Cena di benvenuto in hotel" },
+        ],
+      },
+      {
+        day: "Sabato",
+        title: "Fase di Qualificazione Non-Stop",
+        description: "Fase a gironi su 3 centri sportivi di livello eccellente con terna arbitrale per l'Under 17.",
+        timeSlots: [
+          { time: "09:00 - 13:00", activity: "Gare del mattino gironi A e B" },
+          { time: "13:00 - 14:30", activity: "Pausa pranzo atleti" },
+          { time: "15:00 - 19:30", activity: "Completamento gironi e determinazione tabelloni Gold e Silver" },
+        ],
+      },
+      {
+        day: "Domenica",
+        title: "Final Eight & Gran Galà di Chiusura",
+        description: "Finali decisive per l'assegnazione del trofeo e riconoscimenti individuali (Miglior Portiere, Capocannoniere).",
+        timeSlots: [
+          { time: "09:30 - 12:30", activity: "Semifinali Gold Cup e finaline Silver" },
+          { time: "14:30 - 16:30", activity: "Finalissima Under 15 e Under 17 sul campo centrale" },
+          { time: "17:00", activity: "Cerimonia di premiazione ufficiale e saluti delle delegazioni" },
+        ],
+      },
+    ],
+    facilities: [
+      {
+        name: "Centro Polisportivo Città di Cantù",
+        location: "Cantù (CO)",
+        surface: "Erba naturale 105x65 + sintetico 11vs11",
+        description: "Impianto all'avanguardia con tribune coperte, sala stampa e punto ristoro per oltre 800 persone.",
+        features: ["Campo Principale in Erba", "Sintetico Riscaldato", "Area VIP", "Parcheggio Bus"],
+      },
+    ],
+    includedServices: [
+      "Pensione completa dal venerdì sera alla domenica a pranzo",
+      "Terna arbitrale per gare U17",
+      "Acqua a bordo campo illimitata per tutte le gare",
+      "Ingresso gratuito per accompagnatori a tutte le partite",
+      "Coppe per le prime 4 classificate e targa ricordo a tutte le società",
+    ],
+  },
+  {
+    id: "summer-lake-festival",
+    slug: "summer-lake-festival",
+    title: "Summer Lake Festival & Cup 2026",
+    subtitle: "La grande festa di inizio estate sul lago per Esordienti, Pulcini e Primi Calci",
+    dates: "05 - 07 Giugno 2026",
+    month: "Giugno",
+    location: "Como & Bellagio (CO)",
+    categories: [
+      "Under 13 (Esordienti)",
+      "Under 11 (Pulcini)",
+      "Primi Calci / Piccoli Amici",
+    ],
+    minMatchesGuaranteed: 5,
+    pitchType: "Campi a 9 e 7 in erba sintetica morbida omologata FIGC",
+    heroImage: "/imgs/squadra.jpg",
+    isFeatured: false,
+    statusBadge: "Iscrizioni Aperte",
+    overview:
+      "Il torneo più festoso e partecipato dell'anno. Pensato su misura per l'Attività di Base, unisce partite divertenti, tanto minutaggio per tutti i bambini e il clima estivo del Lago di Como che trasforma il weekend in una vera e propria mini-vacanza per tutta la famiglia.",
+    highlights: [
+      "Minimo 5 mini-partite garantite con rotazione continua per far giocare tutti",
+      "Nessun eliminato precoce: formule a gironi finali bilanciati",
+      "Presenza della mascotte FIRO per animare premiazioni e pause gioco",
+      "Convenzioni speciali lido/spiaggia sul lago per il sabato pomeriggio",
+      "Medaglia d'oro celebrativa a ciascun bambino partecipante",
+    ],
+    schedule: [
+      {
+        day: "Venerdì",
+        title: "Arrivo sul Lago & Notte Magica",
+        description: "Accoglienza presso le strutture alberghiere convenzionate e ritrovo d'apertura.",
+        timeSlots: [
+          { time: "Dalle 14:30", activity: "Arrivo e sistemazione in hotel" },
+          { time: "18:00", activity: "Festa di accoglienza e giochi di riscaldamento con FIRO" },
+          { time: "20:00", activity: "Cena di squadra" },
+        ],
+      },
+      {
+        day: "Sabato",
+        title: "Maratona di Calcio & Pomeriggio al Lido",
+        description: "Fase a gironi mattutina e pomeriggio dedicato al lago e allo svago delle famiglie.",
+        timeSlots: [
+          { time: "09:00 - 12:30", activity: "Gare gironi Pulcini ed Esordienti" },
+          { time: "13:00 - 15:00", activity: "Pranzo all'aperto / in struttura" },
+          { time: "15:30 - 19:00", activity: "Tempo libero: convenzione lido lago o gita in battello" },
+        ],
+      },
+      {
+        day: "Domenica",
+        title: "Gran Finale & Premiazioni per Tutti",
+        description: "Partite conclusive e premiazione trionfale in cui ogni bambino sale sul podio.",
+        timeSlots: [
+          { time: "09:30 - 12:30", activity: "Fasi finali di categoria" },
+          { time: "14:30 - 16:00", activity: "Finalissime e sfilata con le famiglie sugli spalti" },
+          { time: "16:30", activity: "Premiazione collettiva con medaglie per tutti i giovani atleti" },
+        ],
+      },
+    ],
+    facilities: [
+      {
+        name: "Centro Giovanile Lario Sports Park",
+        location: "Erba / Como Est",
+        surface: "3 campi sintetici omologati FIGC per attività di base",
+        description: "Parco giochi interno, area verde ombreggiata per famiglie, bar e tribune a ridosso del campo.",
+        features: ["Area Verde Famiglie", "Punto Ristoro Bimbi", "Spogliatoi Dedicati", "Parcheggio Sicuro"],
+      },
+    ],
+    includedServices: [
+      "Pensione completa con menù bimbi dedicato",
+      "Kit ricordo e sacca Sportessence Travel per ogni atleta",
+      "Medaglia a tutti i bambini senza distinzione di classifica",
+      "Assicurazione e staff di animazione/assistenza in loco",
+    ],
+  },
+  {
+    id: "como-autumn-kickoff",
+    slug: "como-autumn-kickoff",
+    title: "Como Autumn Kickoff Trophy 2026",
+    subtitle: "Il torneo pre-campionato di Settembre per preparare la stagione agonistica",
+    dates: "18 - 20 Settembre 2026",
+    month: "Settembre",
+    location: "Como & Brianza Comasca (CO)",
+    categories: [
+      "Under 17 (Allievi)",
+      "Under 15 (Giovanissimi)",
+      "Under 13 (Esordienti)",
+    ],
+    minMatchesGuaranteed: 4,
+    pitchType: "Sintetici di eccellenza omologati LND",
+    heroImage: "/imgs/calciatore.jpeg",
+    isFeatured: false,
+    statusBadge: "Iscrizioni Aperte",
+    overview:
+      "Il test match pre-campionato ideale per affinare schemi tattici, cementare il gruppo squadra e vivere tre giorni di ritiro sportivo prima dell'inizio dei campionati ufficiali regionali e provinciali.",
+    highlights: [
+      "Ottimale come ritiro di inizio stagione chiavi in mano",
+      "Possibilità di concordare tempi di gioco e cambi illimitati per ruotare l'intera rosa",
+      "Hotel situati in contesti tranquilli e rilassanti con sale riunioni per briefing video",
+      "Clima mite di inizio autunno sul Lago di Como",
+    ],
+    schedule: [
+      {
+        day: "Venerdì",
+        title: "Ritiro & Preparazione",
+        description: "Arrivo, presa alloggi, possibile seduta di rifinitura o briefing tecnico.",
+        timeSlots: [
+          { time: "15:00", activity: "Arrivo squadra e presa camere" },
+          { time: "18:00", activity: "Briefing societario e consegna documentazione" },
+          { time: "20:00", activity: "Cena proteica atleti" },
+        ],
+      },
+      {
+        day: "Sabato",
+        title: "Test Match a Gironi",
+        description: "Intensa giornata di confronti con formazioni di pari categoria di altre regioni.",
+        timeSlots: [
+          { time: "09:30 - 13:00", activity: "Gare mattutine" },
+          { time: "15:00 - 19:00", activity: "Gare pomeridiane e analisi tattica" },
+        ],
+      },
+      {
+        day: "Domenica",
+        title: "Fasi Conclusive & Rientro",
+        description: "Gare di piazzamento, proclamazione vincitori e rientro per l'inizio della settimana.",
+        timeSlots: [
+          { time: "09:30 - 12:30", activity: "Finali di piazzamento" },
+          { time: "14:30 - 16:00", activity: "Premiazione finale e consegna attestati di partecipazione" },
+        ],
+      },
+    ],
+    facilities: [
+      {
+        name: "Centro Tecnico Giovanile Lariano",
+        location: "Cantù / Como",
+        surface: "2 campi sintetici 11vs11",
+        description: "Struttura d'élite con sala riunioni per video analisi a disposizione delle società.",
+        features: ["Sala Video-Analisi", "Palestra Riscaldamento", "Bar e Ristoro", "Area Medica"],
+      },
+    ],
+    includedServices: [
+      "Soggiorno completo con sala riunioni tecnica a uso esclusivo",
+      "Pasti con menù sportivo concordato",
+      "Minimo 4 gare da 2 tempi con arbitri federali",
+      "Tutor Sportessence Travel dedicato alla comitiva",
+    ],
+  },
+];
