@@ -1,8 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Tournament } from "@/types";
 import { Trophy, Calendar, CheckCircle2, FileText, ArrowRight, MapPin } from "lucide-react";
 
-export default function Hero() {
+interface HeroProps {
+  tournament?: Tournament;
+}
+
+export default function Hero({ tournament }: HeroProps) {
+  const currentTournament = tournament || {
+    id: "como-lake-spring-cup",
+    slug: "como-lake-spring-cup",
+    title: "Como Lake Spring Cup 2026",
+    subtitle: "Il format perfetto per il ponte primaverile: 3 giorni di gare con sfilata inaugurale serale e navette sui campi.",
+    dates: "24 - 26 Aprile 2026",
+    location: "Como & Cintura Urbana (CO)",
+    minMatchesGuaranteed: 4,
+    categories: ["Under 17 (Allievi)", "Under 15 (Giovanissimi)", "Under 13 (Esordienti)", "Under 11 (Pulcini)"],
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-blue-deep text-white">
       {/* Sfondo Immagine con Overlay Gradiente */}
@@ -108,24 +124,24 @@ export default function Hero() {
               </div>
 
               <h2 className="text-2xl font-black text-white mb-2">
-                Como Lake Spring Cup 2026
+                {currentTournament.title}
               </h2>
               <p className="text-sm text-gray-200 mb-6 leading-relaxed">
-                Il format perfetto per il ponte primaverile: 3 giorni di gare con sfilata inaugurale serale e navette sui campi.
+                {currentTournament.subtitle}
               </p>
 
               <div className="space-y-3 mb-6 bg-blue-deep/60 p-4 rounded-xl border border-white/10 text-xs">
                 <div className="flex justify-between items-center text-gray-300">
                   <span>Date dell&apos;evento:</span>
-                  <strong className="text-white">24 - 26 Aprile 2026</strong>
+                  <strong className="text-white">{currentTournament.dates}</strong>
                 </div>
                 <div className="flex justify-between items-center text-gray-300">
                   <span>Categorie:</span>
-                  <strong className="text-white">U17, U15, Esordienti, Pulcini</strong>
+                  <strong className="text-white">{currentTournament.categories.map((c) => c.split(" ")[0]).join(", ")}</strong>
                 </div>
                 <div className="flex justify-between items-center text-gray-300">
                   <span>Partite minime:</span>
-                  <strong className="text-cyan-300">4 partite garantite</strong>
+                  <strong className="text-cyan-300">{currentTournament.minMatchesGuaranteed} partite garantite</strong>
                 </div>
                 <div className="flex justify-between items-center text-gray-300">
                   <span>Trattamento:</span>
@@ -134,7 +150,7 @@ export default function Hero() {
               </div>
 
               <Link
-                href="/tornei/como-lake-spring-cup"
+                href={`/tornei/${currentTournament.slug}`}
                 className="w-full btn-secondary text-sm py-3 justify-center"
               >
                 <Trophy className="w-4 h-4" />

@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { TOURNAMENTS } from "@/data/tournaments";
-import { ACCOMMODATIONS } from "@/data/accommodations";
+import { getAllTournaments, getTournamentBySlug, getAllAccommodations } from "@/data/storage";
 import {
   Calendar,
   MapPin,
@@ -21,14 +20,14 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return TOURNAMENTS.map((t) => ({
+  return getAllTournaments().map((t) => ({
     slug: t.slug,
   }));
 }
 
 export default async function TournamentDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const tournament = TOURNAMENTS.find((t) => t.slug === slug);
+  const tournament = getTournamentBySlug(slug);
 
   if (!tournament) {
     notFound();
@@ -324,7 +323,7 @@ export default async function TournamentDetailPage({ params }: PageProps) {
                 Le squadre alloggiano in hotel 3* o 4* attentamente verificati dal nostro staff per spazi comuni, orari pasti flessibili e accoglienza pullman.
               </p>
               <div className="space-y-3 pt-1">
-                {ACCOMMODATIONS.slice(0, 2).map((acc) => (
+                {getAllAccommodations().slice(0, 2).map((acc) => (
                   <div key={acc.id} className="text-xs p-3 rounded-xl bg-gray-50 border border-gray-100">
                     <span className="font-bold text-blue-deep block">{acc.name} ({acc.stars}★)</span>
                     <span className="text-gray-500 text-[11px]">{acc.distanceFromPitches} • {acc.zone}</span>

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { TOURNAMENTS } from "@/data/tournaments";
+import { getAllTournaments } from "@/data/storage";
 import TournamentCard from "@/components/tornei/TournamentCard";
 import { Trophy, ArrowRight } from "lucide-react";
 
 export default function FeaturedTournaments() {
-  const featured = TOURNAMENTS.slice(0, 3);
+  const tournaments = getAllTournaments();
+  const featured = tournaments.slice(0, 3);
 
   return (
     <section className="py-20 bg-gray-50 border-t border-gray-200">

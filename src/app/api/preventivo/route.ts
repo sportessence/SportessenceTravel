@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { QuoteRequestPayload } from "@/types";
+import { addLead } from "@/data/storage";
 
 export async function POST(request: Request) {
   try {
@@ -22,27 +23,22 @@ export async function POST(request: Request) {
       );
     }
 
-    // Log del lead registrato (pronto per integrazione con Resend o Supabase DB)
-    console.log("[B2B LEAD RICEVUTO - Sportessence Travel]:", {
-      timestamp: new Date().toISOString(),
-      societa: body.clubName,
-      citta: `${body.city} (${body.province})`,
-      referente: `${body.contactName} (${body.contactRole})`,
-      email: body.email,
-      telefono: body.phone,
-      torneoSelezionato: body.tournamentId || "Generico / Da Concordare",
-      categorie: body.categories,
-      atletiStimati: body.estimatedPlayers,
-      accompagnatoriStimati: body.estimatedStaffAndParents,
-      alloggio: body.accommodationType,
-      note: body.notes || "Nessuna nota",
+    // Salvataggio effettivo nel database persistente dei lead
+    const savedLead = addLead(body);
+
+    console.log("[B2B LEAD SALVATO IN DASHBOARD]:", {
+      id: savedLead.id,
+      societa: savedLead.clubName,
+      referente: savedLead.contactName,
+      telefono: savedLead.phone,
+      email: savedLead.email,
     });
 
     return NextResponse.json(
       {
         success: true,
-        message: "Richiesta di preventivo e bando registrata con successo.",
-        leadId: `LEAD-${Date.now().toString().slice(-6)}`,
+        message: "Richiesta di preventivo e bando registrata con successo nel pannello societario.",
+        leadId: savedLead.id,
       },
       { status: 200 }
     );

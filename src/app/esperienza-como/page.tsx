@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EXPERIENCES } from "@/data/experiences";
+import { getAllExperiences } from "@/data/storage";
 import { Compass, Ship, Mountain, MapPin, Sparkles, HeartHandshake, ArrowRight } from "lucide-react";
 
 export default function EsperienzaComoPage() {
+  const experiences = getAllExperiences();
   return (
     <main className="pt-28 pb-20 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +98,7 @@ export default function EsperienzaComoPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {EXPERIENCES.map((exp) => (
+            {experiences.map((exp) => (
               <div
                 key={exp.id}
                 className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group"

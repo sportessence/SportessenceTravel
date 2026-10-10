@@ -7,12 +7,15 @@ import FaqSection from "@/components/home/FaqSection";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Trophy, Sparkles, MapPin } from "lucide-react";
+import { getFeaturedTournament } from "@/data/storage";
 
 export default function HomePage() {
+  const featured = getFeaturedTournament();
+
   return (
     <main className="min-h-screen">
-      {/* HERO SECTION */}
-      <Hero />
+      {/* HERO SECTION CON TORNEO IN EVIDENZA DINAMICO */}
+      <Hero tournament={featured} />
 
       {/* 4 PILASTRI B2B */}
       <ValueProps />
@@ -20,7 +23,7 @@ export default function HomePage() {
       {/* VETRINA TORNEI */}
       <FeaturedTournaments />
 
-      {/* IL WEEKEND TIPO */}
+      {/* IL WEEKEND TIPO (CON SFONDO SPEZZATO IN NAVY SCURO) */}
       <WeekendTimeline />
 
       {/* BANNER SPECIFICO PER DIRIGENTI */}

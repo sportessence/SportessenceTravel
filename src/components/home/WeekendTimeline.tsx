@@ -79,33 +79,36 @@ export default function WeekendTimeline() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-blue-deep to-[#051c34] text-white relative overflow-hidden">
+      {/* Texture di sfondo */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-light/20 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header */}
+        {/* Header con contrasto elevato */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-black uppercase tracking-widest text-blue-light block mb-2">
+          <span className="text-xs font-black uppercase tracking-widest text-fox block mb-2">
             Il Format Collaudato
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-blue-deep tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
             Come si svolge il weekend tipo della tua squadra
           </h2>
-          <p className="mt-3 text-base text-gray-600">
-            Un programma calibrato minuto per minuto per garantire massimo divertimento agli atleti, ordine per gli staff e relax per i genitori.
+          <p className="mt-3 text-base text-cyan-100 max-w-2xl mx-auto">
+            Un programma calibrato minuto per minuto per garantire massimo divertimento agli atleti, ordine per gli staff e relax per i genitori sul Lago di Como.
           </p>
         </div>
 
         {/* Tab Selettore Giorni */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-gray-100 p-1.5 rounded-2xl max-w-lg w-full">
+          <div className="inline-flex bg-white/10 backdrop-blur-md p-1.5 rounded-2xl max-w-lg w-full border border-white/20">
             {days.map((item, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveDay(idx as 0 | 1 | 2)}
                 className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all duration-200 flex items-center justify-center gap-2 ${
                   activeDay === idx
-                    ? "bg-blue-deep text-white shadow-md"
-                    : "text-gray-600 hover:text-blue-deep"
+                    ? "bg-fox text-white shadow-lg scale-[1.02]"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 <Calendar className="w-4 h-4 hidden sm:inline" />
@@ -115,35 +118,35 @@ export default function WeekendTimeline() {
           </div>
         </div>
 
-        {/* Contenuto Giorno Selezionato */}
-        <div className="bg-cream rounded-3xl p-8 sm:p-12 border border-amber-200/80 shadow-sm max-w-4xl mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-amber-200">
+        {/* Card Contenuto con stacco visivo netto */}
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/15">
             <div>
               <span className="text-xs font-black text-fox uppercase tracking-widest">
                 {days[activeDay].badge} — {days[activeDay].day}
               </span>
-              <h3 className="text-2xl font-black text-blue-deep mt-1">
+              <h3 className="text-2xl sm:text-3xl font-black text-white mt-1">
                 {days[activeDay].title}
               </h3>
             </div>
-            <span className="text-xs font-semibold text-gray-500 bg-white px-3 py-1.5 rounded-full border border-gray-200 self-start sm:self-auto">
+            <span className="text-xs font-bold text-cyan-200 bg-blue-deep/80 px-3.5 py-1.5 rounded-full border border-cyan-400/30 self-start sm:self-auto">
               {days[activeDay].lead}
             </span>
           </div>
 
-          {/* Timeline Verticale */}
-          <div className="space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-blue-light/30">
+          {/* Timeline Verticale con card chiare */}
+          <div className="space-y-8 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-blue-light/40">
             {days[activeDay].steps.map((step, idx) => (
               <div key={idx} className="relative flex items-start gap-6 group">
-                <div className="w-7 h-7 rounded-full bg-blue-deep border-4 border-white text-white flex items-center justify-center flex-shrink-0 z-10 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-fox"></span>
+                <div className="w-7 h-7 rounded-full bg-fox border-4 border-white text-white flex items-center justify-center flex-shrink-0 z-10 shadow-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
                 </div>
-                <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex-grow hover:border-blue-light/50 transition-colors">
-                  <div className="flex items-center gap-2 text-xs font-bold text-blue-light mb-1">
-                    <Clock className="w-3.5 h-3.5" />
+                <div className="bg-white text-blue-deep p-6 rounded-2xl shadow-xl flex-grow border border-white hover:border-blue-light transition-all">
+                  <div className="flex items-center gap-2 text-xs font-bold text-blue-light mb-1.5">
+                    <Clock className="w-4 h-4" />
                     <span>{step.time}</span>
                   </div>
-                  <h4 className="text-base font-bold text-blue-deep mb-1">
+                  <h4 className="text-base sm:text-lg font-black text-blue-deep mb-1">
                     {step.title}
                   </h4>
                   <p className="text-sm text-gray-600 leading-relaxed">
