@@ -30,7 +30,6 @@ import {
   RefreshCw,
 } from "lucide-react";
 import Link from "next/link";
-import LogoTravel from "@/components/ui/LogoTravel";
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

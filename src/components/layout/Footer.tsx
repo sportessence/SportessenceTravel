@@ -2,8 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Trophy, ShieldCheck } from "lucide-react";
 
-import LogoTravel from "@/components/ui/LogoTravel";
-
 export default function Footer() {
   return (
     <footer className="bg-blue-deep text-white pt-16 pb-12 border-t-4 border-fox">
@@ -13,7 +11,13 @@ export default function Footer() {
           {/* Colonna 1: Brand & Mission */}
           <div className="space-y-4">
             <Link href="/" className="inline-block py-1">
-              <LogoTravel variant="light" size="sm" />
+              <Image
+                src="/imgs/logoTravelTransparent.png"
+                alt="Sportessence Travel Logo"
+                width={250}
+                height={80}
+                className="h-12 w-auto object-contain"
+              />
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
               Il dipartimento di Sportessence dedicato all'organizzazione di tornei giovanili d'eccellenza e soggiorni sportivi chiavi in mano sul Lago di Como.

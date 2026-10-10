@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Trophy, Heart, Users, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
-import LogoTravel from "@/components/ui/LogoTravel";
 
 export default function ChiSiamoPage() {
   return (
@@ -63,8 +62,14 @@ export default function ChiSiamoPage() {
 
           <div className="lg:col-span-5 relative">
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-200 text-center space-y-6">
-              <div className="py-4 flex justify-center">
-                <LogoTravel variant="dark" size="lg" />
+              <div className="py-2 flex justify-center">
+                <Image
+                  src="/imgs/logoTravelNoSfondo.png"
+                  alt="Sportessence Travel Logo"
+                  width={340}
+                  height={240}
+                  className="h-44 w-auto object-contain"
+                />
               </div>
 
               <div className="space-y-2 border-t border-gray-100 pt-4 text-xs text-gray-600">

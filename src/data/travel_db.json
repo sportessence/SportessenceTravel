@@ -17,7 +17,7 @@
       "minMatchesGuaranteed": 4,
       "pitchType": "Campi sintetici di ultima generazione omologati LND/FIGC",
       "heroImage": "/imgs/calcio.jpg",
-      "isFeatured": true,
+      "isFeatured": false,
       "statusBadge": "Iscrizioni Aperte",
       "overview": "La Como Lake Spring Cup inaugura la stagione dei tornei primaverili nella cornice mozzafiato del Lago di Como. Tre giorni di puro calcio giovanile, confronto sportivo ad alta intensità e un'esperienza organizzativa curata nei minimi dettagli per squadre provenienti da tutta Italia e dalla vicina Svizzera.",
       "highlights": [
@@ -137,7 +137,7 @@
       "minMatchesGuaranteed": 4,
       "pitchType": "Campi a 11 in erba naturale e sintetico FIFA Quality Pro",
       "heroImage": "/imgs/fotoHeroOriz.webp",
-      "isFeatured": true,
+      "isFeatured": false,
       "statusBadge": "Ultimi Posti",
       "overview": "Un torneo di alto profilo agonistico pensato per le formazioni che vogliono chiudere la stagione agonistica con una trasferta memorabile in una delle mete turistiche più ambite d'Europa. Livello competitivo equilibrato con fasce Gold e Silver per garantire partite avvincenti fino all'ultimo minuto.",
       "highlights": [
@@ -244,7 +244,7 @@
       "minMatchesGuaranteed": 5,
       "pitchType": "Campi a 9 e 7 in erba sintetica morbida omologata FIGC",
       "heroImage": "/imgs/squadra.jpg",
-      "isFeatured": false,
+      "isFeatured": true,
       "statusBadge": "Iscrizioni Aperte",
       "overview": "Il torneo più festoso e partecipato dell'anno. Pensato su misura per l'Attività di Base, unisce partite divertenti, tanto minutaggio per tutti i bambini e il clima estivo del Lago di Como che trasforma il weekend in una vera e propria mini-vacanza per tutta la famiglia.",
       "highlights": [
